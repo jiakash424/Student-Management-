@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 min-h-screen;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-emerald-300/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-emerald-400/70;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass {
+    @apply bg-white/60 backdrop-blur-xl border border-white/30 shadow-lg shadow-emerald-900/5;
+  }
+  
+  .glass-dark {
+    @apply bg-white/40 backdrop-blur-xl border border-white/20 shadow-lg shadow-emerald-900/5;
+  }
+
+  .glass-strong {
+    @apply bg-white/80 backdrop-blur-2xl border border-white/40 shadow-xl shadow-emerald-900/5;
+  }
+
+  /* Gradient accent backgrounds */
+  .bg-brand-gradient {
+    @apply bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500;
+  }
+
+  .bg-brand-gradient-soft {
+    @apply bg-gradient-to-r from-emerald-400/20 via-green-400/10 to-teal-400/20;
+  }
+
+  /* Input styles */
+  .input-glass {
+    @apply w-full px-4 py-3 rounded-xl bg-white/50 backdrop-blur-sm border border-emerald-200/50 
+           text-gray-700 placeholder-gray-400/70
+           focus:outline-none focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-300 focus:bg-white/70
+           transition-all duration-300;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-semibold text-white bg-brand-gradient
+           hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-md
+           transition-all duration-300 ease-out;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-xl font-semibold text-emerald-700 bg-emerald-100/80
+           hover:bg-emerald-200/80 hover:shadow-md
+           active:bg-emerald-300/60
+           transition-all duration-300;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 rounded-xl font-medium text-gray-600
+           hover:bg-white/50 hover:text-emerald-700
+           transition-all duration-300;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-active {
+    @apply badge bg-emerald-100 text-emerald-700;
+  }
+
+  .badge-inactive {
+    @apply badge bg-amber-100 text-amber-700;
+  }
+
+  .badge-graduated {
+    @apply badge bg-blue-100 text-blue-700;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600;
+  }
+
+  /* Stagger animation delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
